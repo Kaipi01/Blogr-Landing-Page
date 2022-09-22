@@ -1,0 +1,25 @@
+{
+  "name": "blogr-landing-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kaipi01/Blogr-Landing-Page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kaipi01/Blogr-Landing-Page/issues"
+  },
+  "homepage": "https://github.com/Kaipi01/Blogr-Landing-Page#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.55.0"
+  }
+}
