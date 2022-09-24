@@ -3,6 +3,7 @@
 //Primary
 
 $Light-Red: hsl(356, 100%, 66%); // (CTA text)
+$Red: hsl(339, 73%, 33%); // (CTA text)
 $Very-Light-Red: hsl(355, 100%, 74%); // (CTA hover background)
 $Very-Dark-Blue: hsl(208, 49%, 24%); // (headings)
 
@@ -17,14 +18,19 @@ $Very-Dark-Black-Blue: hsl(240, 10%, 16%); // (footer background)
 
 //Background gradient Intro/CTA mobile nav:
 
-$Very-Light-Red: hsl(13, 100%, 72%);
-$Light-Red: hsl(353, 100%, 62%);
+$Red-Gradient: linear-gradient(to top, $Light-Red, $Very-Light-Red);
 
 //Background gradient body:
 
 $Very-Dark-Gray-Blue: hsl(237, 17%, 21%);
 $Very-Dark-Besaturated-Blue: hsl(237, 23%, 32%);
 
+$Gray-Blue-Gradient: linear-gradient(to bottom, $Very-Dark-Gray-Blue, $Very-Dark-Besaturated-Blue);
+
 //Typography
 
 $Font-Size: 16px;
+
+// Breakpoint
+
+$Breakpoint: 800px;
