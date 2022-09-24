@@ -1,0 +1,14 @@
+@use "../utils/variables" as *;
+
+.article {
+    margin: 0 auto;
+    width: 80%;
+    
+    &__title {
+        color: $Very-Dark-Blue;
+        font-size: 1.4rem;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        padding: 0 20px;
+    }
+}

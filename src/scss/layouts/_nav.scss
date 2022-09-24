@@ -1,0 +1,87 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.nav {
+    @include setFlex(row, space-between);
+    padding: 25px;
+    //overflow: visible;
+    position: relative;
+
+    &__hamburger {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        @media (min-width: $Breakpoint) {
+            display: none;
+        }
+
+        &Show {
+            &--hide {
+                display: none;
+            }
+        }
+        
+        &Close {
+            &--hide {
+                display: none;
+            }
+        }
+    }
+
+    &__menu {
+        background-color: $White;
+        border-radius: 7px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        //display: none;
+        font-size: 1.1rem;
+        position: absolute;
+        padding: 30px;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        list-style: none;
+        width: 85vw;
+
+        &--active {
+            display: block;
+        }
+
+        &Btn {
+            background-color: red;
+        }
+
+        &Item {
+            padding: 10px;
+
+            &:nth-child(4) {    
+                padding-top: 25px;
+                border-top: 1px solid $Grayish-Blue;
+                margin-top: 10px;
+            }
+
+            &Link {
+                color: $Very-Dark-Blue;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            &List {
+                //display: none;
+                background-color: rgba($Grayish-Blue, 0.3);
+                border-radius: 7px;
+                padding: 15px 0;
+                list-style: none;
+
+                &El {
+                    padding: 7px;
+                    &Link {
+                        color: $Very-Dark-Grayish-Blue;
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}

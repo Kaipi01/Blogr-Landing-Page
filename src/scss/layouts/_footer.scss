@@ -1,0 +1,41 @@
+@use "../utils/variables" as *;
+
+.footer {
+    background-color: $Very-Dark-Black-Blue;
+    border-top-right-radius: 80px;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1;
+    margin-top: 90px;
+    padding: 55px 20px;
+    text-align: center;
+
+    .logo {
+        margin: 10px auto;
+    }
+
+    &__links {
+
+        &Name {
+            color: $White;
+            margin-bottom: 20px;
+        }
+
+        &List {
+            list-style: none;
+
+            &Item {
+                padding: 3px;
+
+                &Link {
+                    color: $Grayish-Blue;
+                    text-decoration: none;
+
+                    &:hover, &:focus, &:active {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

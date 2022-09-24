@@ -1,0 +1,83 @@
+@use "../utils/variables" as *;
+
+.section {
+    padding-top: 40px;
+
+    &__title {
+        color: $Very-Dark-Blue;
+        margin-top: 50px;
+        margin-bottom: 40px;
+
+        &2 {
+            color: $White;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__img {
+        &EditorMobile {
+            width: 100%;
+            max-width: 500px;
+
+            @media (min-width: $Breakpoint) {
+                display: none;
+            }
+        }
+
+        &EditorDesktop {
+            display: none;
+            @media (min-width: $Breakpoint) {
+                display: block;
+            }
+        }
+
+        &Phones {
+            position: absolute;
+            width: 100%;
+            left: 50%;
+            transform: translate(-50%,50px);
+            max-width: 360px;
+            z-index: 3;
+        }
+
+        &Circles {
+            position: absolute;
+            top: 55px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            max-width: 550px;
+            z-index: -1;
+        }
+
+        &LaptopMobile {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 40px;
+
+            @media (min-width: $Breakpoint) {
+                display: none;
+            }
+        }
+
+        &LaptopDesktop {
+            display: none;
+            @media (min-width: $Breakpoint) {
+                display: block;
+            }
+        }
+    }
+    
+    &__background {
+        background: $Gray-Blue-Gradient;
+        border-bottom-left-radius: 80px;
+        border-top-right-radius: 80px;
+        color: $White;
+        margin-top: 200px;
+        padding: 150px 30px 100px 30px;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+    }
+}
