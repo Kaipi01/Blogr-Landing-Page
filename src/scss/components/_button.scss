@@ -2,48 +2,59 @@
 @use "../utils/mixins" as *;
 
 %button {
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    color: $Light-Red;
-    font-weight: 700;
-    padding: 13px 18px;
-    transition: all 0.3s ease-in;
+  padding: 13px 20px;
+  transition: all 0.3s ease-in;
+  border: none;
+  border-radius: 30px;
+  color: $Light-Red;
+  font-size: 1.02rem;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .button {
+  &1 {
+    @extend %button;
+    background-color: $White;
 
-    &1 {
-        @extend %button;
-        background-color: $White;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $Red;
+      color: $White;
+    }
+  }
 
-        &:hover, &:focus, &:active {
-            background-color: $Red;
-            color: $White;
-        }
+  &2 {
+    @extend %button;
+    border: 1px solid $White;
+    background-color: transparent;
+    color: $White;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $White;
+      color: $Light-Red;
+    }
+  }
+
+  &3 {
+    @extend %button;
+    padding: 13px 35px;
+    background: linear-gradient(to left, $Light-Red, $Very-Light-Red);
+    color: $White;
+
+    @media (min-width: $Breakpoint) {
+      background: $White;
+      color: $Light-Red;
     }
 
-    &2 {
-        @extend %button;
-        background-color: transparent;
-        border: 1px solid $White;
-        color: $White;
-
-        &:hover, &:focus, &:active {
-            background-color: $White;
-            color: $Light-Red;
-        }
+    &:hover,
+    &:focus,
+    &:active {
+      background: $Red;
+      color: $White;
     }
-
-    &3 {
-        @extend %button;
-        background: linear-gradient(to left, $Light-Red, $Very-Light-Red);
-        color: $White;
-        padding: 15px 35px;
-        font-size: 1.02rem;
-
-        &:hover, &:focus, &:active {
-            background: $Red;
-        }
-    }
+  }
 }

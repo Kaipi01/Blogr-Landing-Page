@@ -1,87 +1,191 @@
-@use '../utils/variables' as *;
-@use '../utils/mixins' as *;
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
 
 .nav {
-    @include setFlex(row, space-between);
-    padding: 25px;
-    //overflow: visible;
-    position: relative;
+  @include setFlex(row, space-between);
+  position: absolute;
+  z-index: 3;
+  top: 30px;
+  left: 50%;
+  width: 100vw;
+  max-width: 1250px;
+  padding: 30px;
+  transform: translateX(-50%);
+  text-align: center;
 
-    &__hamburger {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
+  @media (min-width: $Breakpoint) {
+    padding-top: 0;
+  }
+
+  &__hamburger {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    @media (min-width: $Breakpoint) {
+      display: none;
+    }
+
+    &Show {
+      &--hide {
+        display: none;
+      }
+    }
+
+    &Close {
+      &--hide {
+        display: none;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    width: 85vw;
+    padding: 30px;
+    transform: translateX(-50%);
+    border-radius: 7px;
+    background-color: $White;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 1.1rem;
+    list-style: none;
+
+    @media (min-width: $Breakpoint) {
+      display: flex;
+      position: static;
+      align-items: center;
+      margin-left: 50px;
+      padding: 0;
+      transform: none;
+      background-color: transparent;
+      box-shadow: none;
+
+      &--active {
+        display: flex !important;
+      }
+    }
+
+    &--active {
+      display: block;
+    }
+
+    &Btn {
+      @media (min-width: $Breakpoint) {
+        margin-left: 30px;
+      }
+    }
+
+    &Item {
+      margin-right: 13px;
+      padding: 10px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        img {
+          transform: translate(5px, -5px) rotate(180deg);
+        }
+
+        ul {
+          display: block;
+        }
+      }
+
+      &:nth-child(4) {
+        margin-top: 10px;
+        padding-top: 25px;
+        border-top: 1px solid $Grayish-Blue;
 
         @media (min-width: $Breakpoint) {
+          margin: 0;
+          margin-left: auto;
+          padding: 0;
+          border: none;
+        }
+      }
+
+      &Arrow {
+        transition: all 0.2s ease-in;
+
+        &Dark {
+          @media (min-width: $Breakpoint) {
             display: none;
+          }
+        }
+        &Light {
+          display: none;
+          padding: 0 0 2px 4px;
+          @media (min-width: $Breakpoint) {
+            display: inline-block;
+          }
+        }
+      }
+
+      &Link {
+        transition: all 0.2s ease-in-out;
+        color: $Very-Dark-Blue;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+          opacity: 0.7;
         }
 
-        &Show {
-            &--hide {
-                display: none;
-            }
-        }
-        
-        &Close {
-            &--hide {
-                display: none;
-            }
-        }
-    }
+        @media (min-width: $Breakpoint) {
+          color: $Light-Gray;
 
-    &__menu {
-        background-color: $White;
+          &:hover,
+          &:focus,
+          &:active {
+            color: $White;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &List {
+        display: none;
+        margin-top: 15px;
+        padding: 15px 0;
         border-radius: 7px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        //display: none;
-        font-size: 1.1rem;
-        position: absolute;
-        padding: 30px;
-        top: 80px;
-        left: 50%;
-        transform: translateX(-50%);
+        background-color: rgba($Grayish-Blue, 0.3);
         list-style: none;
-        width: 85vw;
+
+        @media (min-width: $Breakpoint) {
+          position: absolute;
+          width: 150px;
+          padding: 25px 20px;
+          border-radius: 5px;
+          background-color: $White;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          font-size: 1rem;
+          text-align: left;
+        }
 
         &--active {
-            display: block;
+          display: block;
         }
 
-        &Btn {
-            background-color: red;
+        &El {
+          padding: 7px;
+          &Link {
+            transition: all 0.2s ease;
+            color: $Very-Dark-Besaturated-Blue;
+            text-decoration: none;
+
+            &:hover,
+            &:focus,
+            &:active {
+              font-weight: bold;
+            }
+          }
         }
-
-        &Item {
-            padding: 10px;
-
-            &:nth-child(4) {    
-                padding-top: 25px;
-                border-top: 1px solid $Grayish-Blue;
-                margin-top: 10px;
-            }
-
-            &Link {
-                color: $Very-Dark-Blue;
-                font-weight: bold;
-                text-decoration: none;
-            }
-
-            &List {
-                //display: none;
-                background-color: rgba($Grayish-Blue, 0.3);
-                border-radius: 7px;
-                padding: 15px 0;
-                list-style: none;
-
-                &El {
-                    padding: 7px;
-                    &Link {
-                        color: $Very-Dark-Grayish-Blue;
-                        font-weight: bold;
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 }

@@ -1,14 +1,35 @@
 @use "../utils/variables" as *;
 
 .article {
-    margin: 0 auto;
-    width: 80%;
-    
-    &__title {
-        color: $Very-Dark-Blue;
-        font-size: 1.4rem;
-        margin-top: 30px;
-        margin-bottom: 20px;
-        padding: 0 20px;
+  width: 80%;
+  margin: 0 auto;
+
+  @media (min-width: $Breakpoint) {
+    align-self: end;
+    margin-right: 0;
+    margin-left: auto;
+    & ~ & {
+      align-self: start;
+      margin-top: 50px;
     }
+  }
+
+  &--leftAlign {
+    @media (min-width: $Breakpoint) {
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    color: $Very-Dark-Blue;
+    font-size: 1.6rem;
+
+    @media (min-width: $Breakpoint) {
+      padding: 0;
+    }
+  }
 }

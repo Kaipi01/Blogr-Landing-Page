@@ -1,25 +1,25 @@
-@use './utils/variables' as *;
-@use './layouts/header';
-@use './layouts/nav';
-@use './layouts/content';
-@use './layouts/section';
-@use './layouts/article';
-@use './layouts/footer';
-@use './components/button';
-@use './components/logo';
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
+@use "./utils/variables" as *;
+@use "./layouts/header";
+@use "./layouts/nav";
+@use "./layouts/content";
+@use "./layouts/section";
+@use "./layouts/article";
+@use "./layouts/footer";
+@use "./components/button";
+@use "./components/logo";
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
 
-//font-family: 'Overpass', sans-serif;
-//font-family: 'Ubuntu', sans-serif;
-
-*, *::after, *::before { 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    color: $Very-Dark-Grayish-Blue;
-    font-family: 'Overpass', sans-serif;
-    font-size: $Font-Size;
+  overflow-x: hidden;
+  color: $Very-Dark-Grayish-Blue;
+  font-family: "Overpass", sans-serif;
+  font-size: $Font-Size;
 }

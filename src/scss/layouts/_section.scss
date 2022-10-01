@@ -1,83 +1,149 @@
 @use "../utils/variables" as *;
 
 .section {
-    padding-top: 40px;
+  padding-top: 40px;
 
-    &__title {
-        color: $Very-Dark-Blue;
-        margin-top: 50px;
-        margin-bottom: 40px;
+  @media (min-width: $Breakpoint) {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: left;
+  }
 
-        &2 {
-            color: $White;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
+  &__title {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    color: $Very-Dark-Blue;
+    font-size: 1.65rem;
+    text-align: center;
+
+    @media (min-width: $Breakpoint) {
+      grid-column: span 2;
+
+      font-size: 1.9rem;
     }
 
-    &__img {
-        &EditorMobile {
-            width: 100%;
-            max-width: 500px;
-
-            @media (min-width: $Breakpoint) {
-                display: none;
-            }
-        }
-
-        &EditorDesktop {
-            display: none;
-            @media (min-width: $Breakpoint) {
-                display: block;
-            }
-        }
-
-        &Phones {
-            position: absolute;
-            width: 100%;
-            left: 50%;
-            transform: translate(-50%,50px);
-            max-width: 360px;
-            z-index: 3;
-        }
-
-        &Circles {
-            position: absolute;
-            top: 55px;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 150%;
-            max-width: 550px;
-            z-index: -1;
-        }
-
-        &LaptopMobile {
-            width: 100%;
-            max-width: 500px;
-            margin-top: 40px;
-
-            @media (min-width: $Breakpoint) {
-                display: none;
-            }
-        }
-
-        &LaptopDesktop {
-            display: none;
-            @media (min-width: $Breakpoint) {
-                display: block;
-            }
-        }
+    @media (min-width: 1000px) {
+      margin-bottom: -80px;
     }
-    
-    &__background {
-        background: $Gray-Blue-Gradient;
-        border-bottom-left-radius: 80px;
-        border-top-right-radius: 80px;
-        color: $White;
-        margin-top: 200px;
-        padding: 150px 30px 100px 30px;
-        position: relative;
-        overflow: hidden;
-        z-index: 2;
+
+    &2 {
+      margin-bottom: 20px;
+      color: $White;
+      font-size: 2.2rem;
+      @media (min-width: 1000px) {
+        text-align: left;
+      }
     }
+  }
+
+  &__img {
+    width: 130%;
+
+    &EditorMobile {
+      width: 100%;
+      max-width: 500px;
+
+      @media (min-width: $Breakpoint) {
+        display: none;
+      }
+    }
+
+    &EditorDesktop {
+      display: none;
+      @media (min-width: $Breakpoint) {
+        display: block;
+        grid-column: 2 / 2;
+        grid-row: span 4;
+        transform: translateX(50px);
+      }
+    }
+
+    &Phones {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      width: 100%;
+      max-width: 360px;
+      transform: translate(-50%);
+
+      @media (min-width: $Breakpoint) {
+        transform: translate(-50%, -360px);
+      }
+
+      @media (min-width: 1200px) {
+        position: static;
+        max-width: 500px;
+        margin-top: -650px;
+        transform: translateY(550px);
+      }
+    }
+
+    &Circles {
+      position: absolute;
+      z-index: -1;
+      top: 55px;
+      left: 50%;
+      width: 150%;
+      max-width: 550px;
+      transform: translate(-50%, -50%);
+
+      @media (min-width: 1200px) {
+        max-width: 750px;
+        transform: translate(-120%, -50%);
+      }
+    }
+
+    &LaptopMobile {
+      width: 100%;
+      max-width: 500px;
+      margin-top: 40px;
+
+      @media (min-width: $Breakpoint) {
+        display: none;
+      }
+    }
+
+    &LaptopDesktop {
+      display: none;
+      @media (min-width: $Breakpoint) {
+        display: block;
+        grid-row: span 2;
+        margin-top: 100px;
+        transform: translateX(-250px);
+      }
+    }
+  }
+
+  &__background {
+    position: relative;
+    z-index: 2;
+    margin-top: 200px;
+    padding: 150px 30px 100px 30px;
+    overflow: hidden;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    background: $Gray-Blue-Gradient;
+    color: $White;
+
+    @media (min-width: $Breakpoint) {
+      grid-column: span 2;
+    }
+
+    @media (min-width: 1200px) {
+      margin-top: 30px;
+
+      & > * {
+        width: 50%;
+        margin-top: 0;
+        margin-right: 100px;
+        margin-left: auto;
+      }
+    }
+
+    &Text {
+      max-width: 65ch;
+    }
+  }
 }

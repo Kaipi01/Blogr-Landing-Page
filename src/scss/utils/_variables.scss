@@ -10,6 +10,7 @@ $Very-Dark-Blue: hsl(208, 49%, 24%); // (headings)
 //Neutral
 
 $White: hsl(0, 0%, 100%); // (text)
+$Light-Gray: hsl(0, 29%, 94%); // (text)
 $Grayish-Blue: hsl(240, 2%, 79%); // (footer text)
 $Very-Dark-Grayish-Blue: hsl(207, 13%, 34%); // (body copy)
 $Very-Dark-Black-Blue: hsl(240, 10%, 16%); // (footer background)
@@ -18,7 +19,7 @@ $Very-Dark-Black-Blue: hsl(240, 10%, 16%); // (footer background)
 
 //Background gradient Intro/CTA mobile nav:
 
-$Red-Gradient: linear-gradient(to top, $Light-Red, $Very-Light-Red);
+$Red-Gradient: linear-gradient(to left, $Light-Red 80%, $Very-Light-Red);
 
 //Background gradient body:
 
