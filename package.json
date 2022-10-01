@@ -20,6 +20,10 @@
   "homepage": "https://github.com/Kaipi01/Blogr-Landing-Page#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "stylelint-config-property-sort-order-smacss": "^9.0.0"
+  },
+  "stylelint.config": {
+    "extends": "stylelint-config-property-sort-order-smacss"
   }
 }
