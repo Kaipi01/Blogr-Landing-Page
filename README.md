@@ -23,12 +23,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot_1](https://user-images.githubusercontent.com/97670361/193419960-4eeff5fe-2f83-4dbc-844e-a1042748c196.png)
+
+![Screenshot_2](https://user-images.githubusercontent.com/97670361/193419961-f0580ff5-1e73-45c1-85e5-ba95b138d269.png)
+
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://github.com/Kaipi01/Blogr-Landing-Page
+- Live Site URL: https://kaipi01.github.io/Blogr-Landing-Page/
 
 ## My process
 
